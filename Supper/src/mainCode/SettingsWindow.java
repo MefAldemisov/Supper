@@ -57,7 +57,6 @@ public class SettingsWindow extends JFrame {
 
 			@Override
 			public void keyTyped(KeyEvent e) {
-				// TODO Auto-generated method stub
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					creationOfMainWind();
 				}
@@ -66,14 +65,10 @@ public class SettingsWindow extends JFrame {
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void keyPressed(KeyEvent e) {
-				// TODO Auto-generated method stub
-
 			}
 		});
 		btnOk.addActionListener(new ActionListener() {
@@ -200,7 +195,6 @@ public class SettingsWindow extends JFrame {
 	}
 
 	private void creationOfMainWind() {
-		// TODO Auto-generated method stub
 		if (selected1) {
 			readFirst();
 		} else {
