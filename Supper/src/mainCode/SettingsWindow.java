@@ -54,38 +54,35 @@ public class SettingsWindow extends JFrame {
 		btnOk.setFont(new Font("Ubuntu", Font.PLAIN, 20));
 		btnOk.setBounds(375, 350, 150, 50);
 		btnOk.addKeyListener(new KeyListener() {
-			
+
 			@Override
 			public void keyTyped(KeyEvent e) {
 				// TODO Auto-generated method stub
-				
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					creationOfMainWind();
+				}
+
 			}
-			
+
 			@Override
 			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
-				if(e.getKeyCode()==KeyEvent.VK_ENTER) {
-					creationOfMainWind();
-				}
-				
+
 			}
-			
+
 			@Override
 			public void keyPressed(KeyEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 		btnOk.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				creationOfMainWind();
 			}
-
-			
-			
 		});
+		btnOk.setFocusable(true);
 		getContentPane().add(btnOk);
 
 		JLabel lblBombs = new JLabel("Bombs:");
@@ -180,6 +177,7 @@ public class SettingsWindow extends JFrame {
 		choiceS.setBounds(230, 275, 80, 20);
 		getContentPane().add(choiceS);
 	}
+
 	private void readSecond() {
 		try {
 			bomb = Integer.parseInt(bom.getText());
@@ -200,6 +198,7 @@ public class SettingsWindow extends JFrame {
 			JOptionPane.showMessageDialog(null, "You are wrong!(", "Waring", JOptionPane.ERROR_MESSAGE);
 		}
 	}
+
 	private void creationOfMainWind() {
 		// TODO Auto-generated method stub
 		if (selected1) {

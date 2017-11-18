@@ -270,7 +270,7 @@ public class GameWindow extends JFrame {
 					open(table.getSelectedRow(), table.getSelectedColumn());
 				}
 				// opening the bomb
-				if (SwingUtilities.isRightMouseButton(e)) {
+				if (e.getButton()==MouseEvent.BUTTON3) {
 					if (mainArray[table.getSelectedRow()][table.getSelectedColumn()][1] != 1) {
 						if (mainArray[table.getSelectedRow()][table.getSelectedColumn()][1] != 2) {
 							mines++;
@@ -385,7 +385,9 @@ public class GameWindow extends JFrame {
 	private void die() {
 		for (int i = 0; i < picturesArray.length; i++) {
 			for (int j = 0; j < picturesArray[0].length; j++) {
+				if(mainArray[i][j][0]==20) {
 				picturesArray[i][j] = new ImageIcon("src/images/dieIm.png");
+				}
 			}
 		}
 		model.setPicArr(picturesArray);
